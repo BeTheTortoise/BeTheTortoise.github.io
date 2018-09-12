@@ -28,3 +28,12 @@ if(!localStorage.getItem('name')) {
 myButton.onclick = function() {
     setUserName();
 }
+
+// var myBody = document.querySelector('body');
+
+// myBody.onclick = function() {
+//  let newColor1 = Math.ceil(Math.random()*255);
+//  let newColor2 = Math.ceil(Math.random()*255);
+//  let newColor3 = Math.ceil(Math.random()*255);
+//  myBody.style.backgroundColor = `rgb(${newColor1}, ${newColor2}, ${newColor3})`;
+// }
