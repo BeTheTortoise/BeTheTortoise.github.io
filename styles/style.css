@@ -1,14 +1,12 @@
 html {
-    font-size: 20px;
+    font-size: 10px;
     font-family: 'Shadows Into Light', cursive;
     background-color: #ff9900;
 }
 
 h1 {
     font-size: 60px;
-    text-align: center;
-    margin: 0;
-    padding: 10px 0 0;    
+    margin: auto;
     color: #999999;
 }
 
@@ -17,10 +15,10 @@ a {
 }
 
 p, li {
-    font-size: 20px;    
+    font-size: 2em;    
     line-height: 2;
     letter-spacing: 1px;
-    color: #999999
+    color: #999999;
 }
 
 body {
@@ -31,23 +29,36 @@ body {
     border: 5px solid #9999ff;
 }
 
+#head {
+    display: flex;
+}
+
 #tabs {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-wrap: nowrap;
     margin: 10px;
     vertical-align: middle;
     text-align: center;
+    /* position: sticky;
+    top: 0; */
 }
 
 #logo {
     width: 60px;
     height: 60px;
     display: block;
+    margin: 10px auto;
+    transition: width, height, .25s;
 }
 
 #links {
-    margin: auto 10px;
+    margin: 0;
+    padding: 0 auto;
+    font-size: 3em;
+    transition: font-size, .25s;
+    white-space: nowrap;
+    /* background-color: #99ff99; */
 }
 
 a:link {
@@ -56,6 +67,17 @@ a:link {
 
 a:hover, a:visited {
     color: #ff9999;
+}
+
+#links:hover {
+    font-size: 6em;
+    overflow: visible;
+}
+
+#logo:hover {
+    width: 100px;
+    height: 100px;
+    overflow: visible;
 }
 
 a:active {
