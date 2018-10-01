@@ -1,0 +1,42 @@
+html {
+    font-size: 10px;
+    font-family: 'Shadows Into Light';
+}
+
+body {
+    background-image: url('images/logo-preview.jpg');
+}
+
+header {
+    font-size: 3em;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration:  none;
+}
+
+a:hover {
+    color: #ff9999;
+}
+
+a:link {
+    color: #9999ff;
+}
+
+a:active {
+    color: #999999;
+}
+
+#content {
+    font-size: 3em;
+    display: grid;
+    justify-items: stretch;
+}
