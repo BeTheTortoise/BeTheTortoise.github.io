@@ -62,18 +62,19 @@ a:active {
     background-image: url("../images/coffee-table.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
-    background-position: top;
-    min-height: 450px;
-    display: flex;
-    justify-content: center;
+    background-size: cover;
+    background-position: right;
+    min-height: 600px;
+    max-width: 100%;
 }
 
 .hero-text {
     margin: auto;
     color: #000000;
     text-align: center;
+    padding-top: 15%;
     padding-right: 33%;
+    top: 60px;
 }
 
 .project {
@@ -81,11 +82,19 @@ a:active {
     background-color: #ffffff
 }
 
-.sticky2 {
+.project-title {
     top: 60px;
     background-color: #ffffff;
 }
 
 p {
     font-size: 1.5rem;
+}
+
+.profile-image {
+    width: 140px;
+}
+
+.profile-image img {
+    width: 100%;
 }
