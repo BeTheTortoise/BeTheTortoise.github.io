@@ -5,9 +5,6 @@ html {
 
 body {
     margin: 0;
-    /* overflow-anchor: none;  makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)
-    display: flex;  /*enables flex content for its children*/
-    /*flex-direction: column; */
     box-sizing: border-box;
 }
 
@@ -33,26 +30,22 @@ body {
 
 .sticky {
     position: sticky;
-    top: 0;
 }
 
-/* .nav-bar-project-titles {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
-
-nav {
+.nav-bar {
+    bottom: 0;
     text-align: center;
     font-size: 2rem;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: #ffffff;
+    margin: auto;
+    vertical-align: middle;
 }
 
 nav a {
-    margin: auto;
+    
 }
 
 a {
@@ -62,18 +55,18 @@ a {
 #logo {
     width: 60px;
     height: 60px;
-    display: block;
+    /* display: block; */
 }
 
 #logo:hover {
     width: 80px;
     height: 80px;
-    transition: width, height, .25s;
+    transition: width, height, 1.5s;
 }
 
 a:hover {
-    font-size: 4rem;
-    transition: font-size, .25s;
+    font-size: 3rem;
+    transition: font-size, 1.5s;
     color: #ff9999;
 }
 
@@ -86,6 +79,7 @@ a:active {
 }
 
 .content {
+    display: inline;
     font-size: 3rem;
 }
 
@@ -95,25 +89,18 @@ a:active {
 
 .project img {
     width: 80%;
-    margin: auto;
 }
 
 .project-title {
+    top: 0;
     padding-left: 10%;
     background-color: #ffffff;
+    border: 10px dotted #999999;
+    border-radius: 30px;
+    background-
 }
 
-/* @media screen and (max-width: 680px) {
-    .profile-image {
-        outline: 5px solid red;
-    }
-    .project-title {
-        top: 89px;
-    }
-} */
-
 .project p {
-    padding: 0 5%;
     font-size: 1.5rem;
 }
 
