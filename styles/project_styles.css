@@ -43,6 +43,10 @@ body {
     padding-top: auto 5px;
 }
 
+.nav-bar a {
+    margin: auto;
+}
+
 a {
     text-decoration:  none;
 }
@@ -80,7 +84,6 @@ a:active {
 
 .project {
     background-color: rgba(255, 255, 255, 0.5);
-    padding-bottom: 80px;
 }
 
 .project img {
@@ -91,6 +94,7 @@ a:active {
     padding-left: 10%;
     background-color: rgba(255, 255, 255, 1.0);
     border: 10px dotted #999999;
+    justify-content: center;
 }
 
 .project p {
