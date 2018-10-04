@@ -64,8 +64,8 @@ a {
 }
 
 a:hover {
-    font-size: 2.5rem;
-    transition: font-size, 1.5s;
+    /* font-size: 2.5rem; */
+    transition: color, 1.5s;
     color: #ff9999;
 }
 
@@ -94,11 +94,11 @@ a:active {
     padding-left: 10%;
     background-color: rgba(255, 255, 255, 1.0);
     border: 10px dotted #999999;
-    justify-content: center;
 }
 
 .project p {
     font-size: 1.5rem;
+    padding: 0 10%;
 }
 
 .profile-image {
