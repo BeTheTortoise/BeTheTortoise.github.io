@@ -30,22 +30,17 @@ body {
 
 .sticky {
     position: sticky;
+    top: 0;
 }
 
 .nav-bar {
-    bottom: 0;
-    text-align: center;
     font-size: 2rem;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: #ffffff;
-    margin: auto;
-    vertical-align: middle;
-}
-
-nav a {
-    
+    padding-top: auto 5px;
 }
 
 a {
@@ -59,13 +54,13 @@ a {
 }
 
 #logo:hover {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     transition: width, height, 1.5s;
 }
 
 a:hover {
-    font-size: 3rem;
+    font-size: 2.5rem;
     transition: font-size, 1.5s;
     color: #ff9999;
 }
@@ -85,6 +80,7 @@ a:active {
 
 .project {
     background-color: rgba(255, 255, 255, 0.5);
+    padding-bottom: 80px;
 }
 
 .project img {
@@ -92,12 +88,9 @@ a:active {
 }
 
 .project-title {
-    top: 0;
     padding-left: 10%;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 1.0);
     border: 10px dotted #999999;
-    border-radius: 30px;
-    background-
 }
 
 .project p {
