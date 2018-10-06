@@ -35,19 +35,20 @@ body {
 
 .nav-bar {
     font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
     background-color: #ffffff;
-    padding-top: auto 5px;
+    padding-top: 5px;
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .nav-bar a {
-    margin: auto;
+    display: inline-block;
+    text-align: center;
+    align-self: center;
 }
 
 a {
@@ -55,14 +56,19 @@ a {
 }
 
 #logo {
+    width: 10%;
+    height: 10%;
+    display: inline;
+}
+
+#logo img {
     width: 60px;
     height: 60px;
-    /* display: block; */
 }
 
 #logo:hover {
-    width: 70px;
-    height: 70px;
+    width: 15%;
+    height: 15%;
     transition: width, height, 1.5s;
 }
 
