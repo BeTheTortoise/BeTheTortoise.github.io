@@ -41,6 +41,9 @@ body {
     flex-wrap: wrap;
     background-color: #ffffff;
     padding-top: auto 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .nav-bar a {
