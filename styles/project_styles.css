@@ -37,10 +37,7 @@ body {
     font-size: 2rem;
     background-color: rgba(0, 0, 0, 0.0);
     padding-top: 5px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position: sticky;
     overflow: auto;
     display: flex;
     flex-wrap: nowrap;
