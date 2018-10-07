@@ -1,6 +1,11 @@
 var myNavBar = document.querySelector('.nav-bar');
 
-myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px')
+function setNavTop() {
+    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px')
+}
+
+setNavTop()
+window.onresize = setNavTop
 
 var projectLinks = document.querySelectorAll('.nav-bar a');
 
