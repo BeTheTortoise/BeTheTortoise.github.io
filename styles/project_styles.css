@@ -52,6 +52,7 @@ body {
     text-align: center;
     white-space: nowrap;
     padding: 5px;
+    margin: auto;
 }
 
 a {
