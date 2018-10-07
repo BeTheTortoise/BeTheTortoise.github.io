@@ -35,7 +35,7 @@ body {
 
 .nav-bar {
     font-size: 2rem;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.0);
     padding-top: 5px;
     position: fixed;
     left: 0;
@@ -51,8 +51,11 @@ body {
 .nav-bar a {
     text-align: center;
     white-space: nowrap;
-    padding: 5px;
+    padding: 10px;
     margin: auto;
+    border: 1px solid #9999ff;
+    border-radius: 15px;
+    background-color: #ffffff;
 }
 
 a {
@@ -62,6 +65,7 @@ a {
 #logo img {
     width: 60px;
     height: 60px;
+    vertical-align: middle;
 }
 
 #logo:hover {
