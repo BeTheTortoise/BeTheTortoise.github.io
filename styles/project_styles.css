@@ -94,6 +94,8 @@ a:active {
 
 .project img {
     width: 80%;
+    display: block;
+    margin: auto;
 }
 
 .project-title {
