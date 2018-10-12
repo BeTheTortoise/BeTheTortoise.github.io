@@ -91,6 +91,7 @@ function createFortuneButton() {
 // function addFortuneSection() {
 const theBody = document.querySelector('body');
 theBody.appendChild(createFortuneSection());
+theBody.appendChild(createLogoButton());
 const scripts = document.querySelectorAll('script');
 theBody.appendChild(scripts[scripts.length - 1]);
 
@@ -98,3 +99,16 @@ theBody.appendChild(scripts[scripts.length - 1]);
 
 // addFortuneButton = document.querySelector('.addFortuneSection');
 // addFortuneButton.addEventListener('click', addFortuneSection);
+
+// <a class="logo button" href="index.html"><img src="CollectColl/Standard Logo Files/Monochrome on Transparent.png"></a>
+function createLogoButton() {
+    const theA = document.createElement('a');
+    theA.href = 'index.html';
+    theA.classList.add('logo');
+    theA.classList.add('button');
+    const theLogo = document.createElement('img');
+    theLogo.src = 'CollectColl/Standard Logo Files/Original.png';
+    theA.appendChild(theLogo);
+    
+    return theA;
+}

@@ -20,7 +20,7 @@ body {
 
 
 /* everything in body */
-body > * {
+body > section {
     outline: 1px dashed fuchsia;
     text-align: center;
     min-height: 200px;
@@ -48,12 +48,42 @@ body > * {
     font-size: 2rem;
 }
 
-/* .stringGenerator button {
-    position: relative;
-    top: 0px;
-} */
+.button {
+    text-align: center;
+    white-space: nowrap;
+    margin: 2%;
+    padding: 1% 2%;
+    border: 1px solid #9999ff;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
 
-/* 
-.addFortuneSection {
-    height: 20px;
-} */
+a {
+    text-decoration:  none;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 1%;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.logo:hover {
+    background-color: #ff9999; 
+    transition: background-color, 1.5s;
+}
+
+.logo:hover img{
+    width: 60px;
+    height: 60px;
+    transition: width, 1.5s;
+    transition: height, 1.5s;
+}

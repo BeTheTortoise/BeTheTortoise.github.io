@@ -1,0 +1,62 @@
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.button {
+    text-align: center;
+    white-space: nowrap;
+    margin: 2%;
+    padding: 1% 2%;
+    border: 1px solid #9999ff;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration:  none;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 1%;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.logo:hover {
+    background-color: #ff9999; 
+    transition: background-color, 1.5s;
+}
+
+.logo:hover img{
+    width: 60px;
+    height: 60px;
+    transition: width, 1.5s;
+    transition: height, 1.5s;
+}
+
+.imagesGrid {
+    display: flex;
+    flex-flow: column;
+}
+
+.imagesGrid img:first-child {
+    border-top: none;
+}
+
+.imagesGrid img {
+    margin: 1% auto 0;
+    padding: 1% 0 0;
+    max-width: 100%;
+    border-top: 10px dashed #9999ff;
+}
