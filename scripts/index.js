@@ -10,14 +10,14 @@
 const theBody = document.querySelector('body');
 
 linkURLs = [
-    ('Fantasy Football Scheduler', 'index.html#project1'), 
-    ('Task Magic', 'index.html#project2'), 
-    ('This Website', 'index.html#project3'), 
-    ('Space Explorer', 'index.html#project4'), 
-    ('Pictures', 'pictures.html'), 
-    ('Fortune Cookie', 'fortune.html'), 
-    ('Blogs', 'blog.html')
-]
+    ['Fantasy Football Scheduler', 'index.html#project1'], 
+    ['Task Magic', 'index.html#project2'], 
+    ['This Website', 'index.html#project3'], 
+    ['Space Explorer', 'index.html#project4'], 
+    ['Pictures', 'pictures.html'], 
+    ['Fortune Cookie', 'fortune.html'], 
+    ['Blogs', 'blog.html']
+];
 function createNavBar() {
     let tempNavBar = document.createElement('nav');
     tempNavBar.classList.add('nav-bar');
@@ -28,8 +28,8 @@ function createNavLinks(navBar) {
     linkURLs.forEach(project => {
         let link = document.createElement('a');
         link.classList.add('button');
-        link.textContent = project;
-        link.href = project;
+        link.textContent = project[0];
+        link.href = project[1];
         navBar.appendChild(link);
     });
 }

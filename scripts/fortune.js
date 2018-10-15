@@ -90,13 +90,13 @@ function createFortuneButton() {
 }
 
 // function addFortuneSection() {
-const theBody = document.querySelector('body');
-theBody.appendChild(createFortuneSection());
+const thisBody = document.querySelector('body');
+thisBody.appendChild(createFortuneSection());
 const scripts = document.querySelectorAll('script');
-theBody.appendChild(scripts[scripts.length - 1]);
+thisBody.appendChild(scripts[scripts.length - 1]);
 
 // }
 
-logoButtonScript = document.createElement('script');
-logoButtonScript.src = 'scripts/logobutton.js';
-theBody.appendChild(logoButtonScript)
+indexScript = document.createElement('script');
+indexScript.src = 'scripts/index.js';
+thisBody.appendChild(indexScript)

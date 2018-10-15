@@ -1,4 +1,4 @@
-const theBody = document.querySelector('body');
+const thisBody = document.querySelector('body');
 
 const myImages = [
     'images/sad-images/sad_asteroid.jpg',
@@ -12,9 +12,9 @@ const myImages = [
     'images/coffee-table.jpg',
     'images/me.jpg'
 ]
-theBody.appendChild(createImageDiv());
+thisBody.appendChild(createImageDiv());
 const scripts = document.querySelectorAll('script');
-scripts.forEach((script) => theBody.appendChild(script));
+scripts.forEach((script) => thisBody.appendChild(script));
 
 function createImageDiv() {
     const theDiv = document.createElement('div');
@@ -31,6 +31,6 @@ function createImageDiv() {
     return theDiv;
 }
 
-logoButtonScript = document.createElement('script');
-logoButtonScript.src = 'scripts/logobutton.js';
-theBody.appendChild(logoButtonScript)
+indexScript = document.createElement('script');
+indexScript.src = 'scripts/index.js';
+thisBody.appendChild(indexScript)
