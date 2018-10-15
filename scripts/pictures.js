@@ -20,11 +20,12 @@ function createImageDiv() {
     const theDiv = document.createElement('div');
     const imagesList = myImages.map((src) => {
         const newImage = document.createElement('img');
-        newImage.src = src
+        newImage.src = src;
+        newImage.classList.add('button');
         return newImage
     });
     imagesList.forEach((img) => {
-        theDiv.appendChild(img)
+        theDiv.appendChild(img);
     });
     theDiv.classList.add('imagesGrid');
     return theDiv;

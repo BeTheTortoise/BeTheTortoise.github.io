@@ -54,6 +54,7 @@ let fortunes = [
 function createFortuneSection() {
     const theSection = document.createElement('section');
     theSection.classList.add('stringGenerator');
+    theSection.classList.add('button');
     theSection.appendChild(createFortuneHeader());
     theSection.appendChild(createFortuneDiv());
     theSection.appendChild(createFortuneButton());

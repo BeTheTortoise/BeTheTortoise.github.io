@@ -1,27 +1,14 @@
-html, body {
-    font-size: 10px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-}
-
 body {
-    background-color: peachpuff;
+    /* background-color: peachpuff; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     min-height: 100%;
 }
 
-
-
 /* everything in body */
 body > section {
-    outline: 1px dashed fuchsia;
+    /* outline: 1px dashed fuchsia; */
     text-align: center;
     min-height: 200px;
     margin: 10px;

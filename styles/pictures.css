@@ -9,14 +9,3 @@ html, body {
     display: flex;
     flex-flow: column;
 }
-
-.imagesGrid img:first-child {
-    border-top: none;
-}
-
-.imagesGrid img {
-    margin: 1% auto 0;
-    padding: 1% 0 0;
-    max-width: 100%;
-    border-top: 10px dashed #9999ff;
-}
