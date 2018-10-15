@@ -39,8 +39,6 @@ function createNavLinks(navBar) {
 }
 const myNavBar = createNavBar();
 theBody.appendChild(myNavBar);
-myNavBar.scrollTo(myNavBar.scrollWidth / 3, 0);
-
 
 function setNavTop() {
     myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px');
@@ -49,14 +47,12 @@ function setNavTop() {
 function scrollNavBar() {
     const navLength = myNavBar.scrollWidth;
     console.log(navLength);
-    console.log(myNavBar.scrollLeft);
     if (myNavBar.scrollLeft > navLength * 2 / 3) {
-        console.log('hello');
         myNavBar.scrollLeft = navLength / 3;
     } else if (myNavBar.scrollLeft < navLength / 3) {
-        console.log('goodbye');
         myNavBar.scrollLeft = navLength * 2 / 3;
     }
+    console.log(myNavBar.scrollLeft);
     // if reach end of nav bar, append new nav bar to end
     // if at beginning of nav bar, prepend new nav bar
 }
@@ -86,3 +82,4 @@ fontLink.href = "https://fonts.googleapis.com/css?family=Space+Mono";
 fontLink.rel = "stylesheet";
 const theHead = document.querySelector('head');
 theHead.appendChild(fontLink);
+scrollNavBar();
