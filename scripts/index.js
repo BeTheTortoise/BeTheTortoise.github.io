@@ -21,6 +21,9 @@ linkURLs = [
 function createNavBar() {
     let tempNavBar = document.createElement('nav');
     tempNavBar.classList.add('nav-bar');
+    // tempNavBar.classList.add('disappearing');
+    createNavLinks(tempNavBar);
+    createNavLinks(tempNavBar);
     createNavLinks(tempNavBar);
     return tempNavBar;
 }
@@ -35,15 +38,44 @@ function createNavLinks(navBar) {
 }
 const myNavBar = createNavBar();
 theBody.appendChild(myNavBar);
+myNavBar.scrollTo(myNavBar.scrollWidth / 3, 0);
+
 
 function setNavTop() {
-    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px')
+    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px');
 }
-setNavTop()
-window.onresize = setNavTop
 
+function scrollNavBar() {
+    const navLength = myNavBar.scrollWidth;
+    console.log(navLength);
+    console.log(myNavBar.scrollLeft);
+    if (myNavBar.scrollLeft > navLength * 2 / 3) {
+        console.log('hello');
+        myNavBar.scrollLeft = navLength / 3;
+    } else if (myNavBar.scrollLeft < navLength / 3) {
+        console.log('goodbye');
+        myNavBar.scrollLeft = navLength * 2 / 3;
+    }
+    // if reach end of nav bar, append new nav bar to end
+    // if at beginning of nav bar, prepend new nav bar
+}
 
+setNavTop();
+window.onresize = setNavTop;
+myNavBar.onscroll = scrollNavBar;
 
-logoButtonScript = document.createElement('script');
-logoButtonScript.src = 'scripts/logobutton.js';
-theBody.appendChild(logoButtonScript)
+// <a class="logo button" href="index.html"><img src="CollectColl/Standard Logo Files/Monochrome on Transparent.png"></a>
+function createLogoButton() {
+    const theA = document.createElement('a');
+    theA.href = 'index.html';
+    theA.classList.add('logo');
+    theA.classList.add('button');
+    // theA.classList.add('disappearing');
+    const theLogo = document.createElement('img');
+    theLogo.src = 'CollectColl/Standard Logo Files/Original.png';
+    theA.appendChild(theLogo);
+
+    return theA;
+}
+
+theBody.appendChild(createLogoButton());
