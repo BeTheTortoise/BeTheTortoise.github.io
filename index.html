@@ -1,42 +1,94 @@
-<!-- Get visitor's time zone and display background based on that
-background should be looping video of stars at night and sun during
-day. Text should adjust to be more readable. -->
-
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Collin Argo">
-    <meta name="description" content="This web page serves as a landing page for information about Collin Argo and his brand CollectColl.
-      Relevant topics include philosophy, programming, nature, video games, sports, and others. The site will also serve links to various
-      projects Collin is working on and act as a portfolio for these projects.">
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/Favicon Logo.png">
-    <title>Collect Coll - All About Collin</title>
-  </head>
-  <body>
-    <div id="head">
-      <a href="index.html"><img id="logo" src="images/logo-preview.jpg"></a>
-      <h1>All About Collin</h1>
-    </div>
-    <div id="tabs">
-      <a id="links" href="blog.html">Blogs</a>
-      <a id="links" href="pictures.html">Pictures</p>
-      <p id="links">FFScheduler</p>
-      <a id="links" href="projects.html">Other Projects</p>
-      <a id="links" href="fortune.html">Fortune Cookie</a>
-    </div>
-    <img id="profile" src="images/me.jpg" alt="A picture of Collin">
-    <p>I'm 30 years old, from Atlanta, Georgia, and want to become a professional software developer.</p>
-    <p>Some of my hobbies include:</p>
-    <ul>
-        <li>Coding</li>
-        <li>Reading</li>
-        <li>Going outside!</li>
-    </ul>
-    <a href="mailto:collin@collectcoll.com">Contact Collin</a>
-    <button>Change user</button>
-    <script src="scripts/main.js"></script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css" type="text/css">
+    <link rel="stylesheet" href="styles/logobutton.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">    <link rel="icon" type="image/png" href="images/Favicon Logo.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+</head>
+<body>
+    <!-- header -->
+    <a class="logo button" href="index.html"><img src="CollectColl/Standard Logo Files/Original.png"></a>
+    <header>
+        <div class="hero-image border">
+            <h1 class="sticky hero-text">Collin's Projects</h1>
+        </div>
+    </header>
+    
+    <!-- content -->
+    <section class="content"> 
+        <section class="previews">
+            <div class="preview button">
+                <h4 class="">Fantasy Football Scheduler</h4>
+                <img src="images/Sample824.png" alt="Sample Fantasy Football Scheduler">
+            </div>
+            <div class="preview button">
+                <h4 class="">Task Magic</h4>
+                <img src="images/app_demo.PNG" alt="Task Magic app preview">
+            </div>
+            <div class="preview button">
+                <h4 class="">This Website</h4>
+                <img src="images/the_universe.jpg" alt="Deep Space">
+            </div>
+            <div class="preview button">
+                <h4 class="">Space Explorer</h4>
+                <img src="images/coffee-table.jpg" alt="Space Explorer game preview">
+            </div>
+        </section>
+        <!-- nav bar -->
+        <nav class="nav-bar">
+            <a class="button" href="#project1">Fantasy Football Scheduler</a>
+            <a class="button" href="#project2">Task Magic</a>
+            <a class="button" href="#project3">This Website</a>
+            <a class="button" href="#project4">Space Explorer</a>
+            <a class="button" href="pictures.html">Pictures</a>
+            <a class="button" href="fortune.html">Fortune Cookie</a>
+            <a class="button" href="blog.html">Blogs</a>
+        </nav>
+        <section class="projects">
+            <div class="project">
+                <a name="project1">
+                    <h3 class="project-title">Fantasy Football Scheduler</h3>
+                </a>
+                <p><!-- I've been in the same fantasy football league for five years now. Every year the issue comes up where we need to assign divisions and make a schedule. Two years ago I made it by hand on an Excel spreadsheet. It proved difficult, as restrictions on the number of divisional matchups and home and away games limit the possible games after others have been assigned. The time to make a new schedule arrived this year, and I'm pretty sure my commisioner just used the same schedule I made two years ago. <br> -->
+                <!-- Now, armed with my newfound Python knowledge, I set out to automate the task of generating a schedule. After all, a computer can check every possible schedule much faster than I can. Two days later I had created a working program, two days after the season started unfortunately. I underestimated the time it would take to make it and although I could have made one new schedule by hand in less time, now I can make one hundred new schedules in less time than I could make one by hand. Such is the power of computers. <br>
+                I have my own opinions on whether leagues should have divisions, whether teams should play other teams in their division twice, whether home games should count, etc. Essentially, I feel that fantasy football should as accurately reflect the format of the actual NFL, as the name fantasy football implies. If the goal was just to see who has the best team, we would see who scored the most points all season. The goal is to see who has the best team when it counts, just like the NFL. <br> -->
+                In the program, I prompt the user for basic input on the structure of their league: number of teams, number of divisions, and number of playoff teams. Then, I create a dictionary to hold the entire schedule and randomize the divisions. Also, I make a list of every possible game to use a reference when assigning games later to make sure it hasn't been assigned already. As I assign games, I create new lists of possible remaining games which is limited by home/away game counts and divisional game requirements. The assignment uses recursion, assigning game after game until either the schedule is complete or no games are possible to be assigned. <br>
+                I'm currently working on saving the schedules as they are made so that the program doesn't make the same schedule twice. Check out the <a href="https://github.com/SCollinA/ff-schedule-maker">source code</a> on my GitHub. A sample schedule is below.
+                </p>
+                <img src="images/Sample824.png" alt="one possible schedule for 8 teams in 2 divisions where 4 teams make the playoffs">
+            </div>
+            <div class="project">
+                <a name="project2">
+                    <h3 class="project-title">Task Magic</h3>
+                </a>
+                <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+            </div>
+            <div class="project">
+                <a name="project3">
+                    <h3 class="project-title">This Website</h3>
+                </a>
+                <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+            </div>
+            <div class="project">
+                <a name="project4">
+                    <h3 class="project-title">Space Explorer</h3>
+                </a>
+                <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+            </div>
+        </section>
+    </section>
+    <section class="profile">
+        <img src="images/me.jpg" alt="Collin smiling" class="profile-image">
+    </section>
+    <!-- footer -->
+    <footer>&copy; Collin Argo, 2018</footer>
+    <script src="scripts/index.js"></script>
+</body>
 </html>

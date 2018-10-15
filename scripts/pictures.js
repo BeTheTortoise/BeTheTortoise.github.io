@@ -1,5 +1,5 @@
 const theBody = document.querySelector('body');
-theBody.appendChild(createLogoButton());
+
 const myImages = [
     'images/sad-images/sad_asteroid.jpg',
     'images/sad-images/sad_bear.jpg',
@@ -14,20 +14,7 @@ const myImages = [
 ]
 theBody.appendChild(createImageDiv());
 const scripts = document.querySelectorAll('script');
-theBody.appendChild(scripts[scripts.length - 1]);
-
-// <a class="logo button" href="index.html"><img src="CollectColl/Standard Logo Files/Monochrome on Transparent.png"></a>
-function createLogoButton() {
-    const theA = document.createElement('a');
-    theA.href = 'index.html';
-    theA.classList.add('logo');
-    theA.classList.add('button');
-    const theLogo = document.createElement('img');
-    theLogo.src = 'CollectColl/Standard Logo Files/Original.png';
-    theA.appendChild(theLogo);
-
-    return theA;
-}
+scripts.forEach((script) => theBody.appendChild(script));
 
 function createImageDiv() {
     const theDiv = document.createElement('div');
@@ -42,3 +29,7 @@ function createImageDiv() {
     theDiv.classList.add('imagesGrid');
     return theDiv;
 }
+
+logoButtonScript = document.createElement('script');
+logoButtonScript.src = 'scripts/logobutton.js';
+theBody.appendChild(logoButtonScript)
