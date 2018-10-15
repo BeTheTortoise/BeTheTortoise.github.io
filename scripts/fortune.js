@@ -91,7 +91,8 @@ function createFortuneButton() {
 
 // function addFortuneSection() {
 const thisBody = document.querySelector('body');
-thisBody.appendChild(createFortuneSection());
+const topDiv = document.querySelector('div');
+topDiv.appendChild(createFortuneSection());
 const scripts = document.querySelectorAll('script');
 thisBody.appendChild(scripts[scripts.length - 1]);
 

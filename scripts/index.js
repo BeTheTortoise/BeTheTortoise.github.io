@@ -16,7 +16,8 @@ linkURLs = [
     ['Space Explorer', 'index.html#project4'], 
     ['Pictures', 'pictures.html'], 
     ['Fortune Cookie', 'fortune.html'], 
-    ['Blogs', 'blog.html']
+    ['Blogs', 'blog.html'],
+    ['Test', 'test.html']
 ];
 function createNavBar() {
     let tempNavBar = document.createElement('nav');
@@ -79,3 +80,9 @@ function createLogoButton() {
 }
 
 theBody.appendChild(createLogoButton());
+
+const fontLink = document.createElement('link');
+fontLink.href = "https://fonts.googleapis.com/css?family=Space+Mono";
+fontLink.rel = "stylesheet";
+const theHead = document.querySelector('head');
+theHead.appendChild(fontLink);
