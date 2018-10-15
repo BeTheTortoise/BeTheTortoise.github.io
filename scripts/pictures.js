@@ -4,7 +4,6 @@ const myImages = [
     'images/sad-images/sad_asteroid.jpg',
     'images/sad-images/sad_bear.jpg',
     'images/sad-images/sad_cloud.jpg',
-    'images/sad-images/sad_cpr.jpg',
     'images/sad-images/sad_dino.jpg',
     'images/sad-images/sad_pig.jpg',
     'images/sad-images/sad_planet.jpg',
