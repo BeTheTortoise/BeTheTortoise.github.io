@@ -12,8 +12,9 @@ const myImages = [
     'images/me.jpg'
 ]
 thisBody.appendChild(createImageDiv());
-const scripts = document.querySelectorAll('script');
-scripts.forEach((script) => thisBody.appendChild(script));
+const outputElement = document.querySelector('[data-output]');
+const modalElement = document.querySelector('[data-modal]');
+modalElement.addEventListener('click', () => modalElement.classList.add('modal-hidden'));
 
 function createImageDiv() {
     const theDiv = document.createElement('div');
@@ -21,6 +22,21 @@ function createImageDiv() {
         const newImage = document.createElement('img');
         newImage.src = src;
         newImage.classList.add('button');
+            // add an event listener to the image
+        newImage.addEventListener('click', function (event) {
+            console.log('hello!');
+            // the element that got clicked is accessible
+            // as `event.target`
+            // And, I can read the `src` attribute!
+            console.log(event.target.src);
+
+            // I can now set the output image's src
+        // to event.target.src!
+            outputElement.setAttribute('src', event.target.src);
+            // modalElement.classList.toggle('modal-hidden');
+            // "remove" is more specific, so we'll use that. yeah!
+            modalElement.classList.remove('modal-hidden');
+        });
         return newImage
     });
     imagesList.forEach((img) => {
@@ -30,13 +46,8 @@ function createImageDiv() {
     return theDiv;
 }
 
-const images = document.querySelectorAll('img');
-images.forEach(image => {
-    image.onclick = () => {
-        console.log(image.width);
-        image.width = 1000;
-    }
-});
+const scripts = document.querySelectorAll('script');
+scripts.forEach((script) => thisBody.appendChild(script));
 
 indexScript = document.createElement('script');
 indexScript.src = 'scripts/index.js';

@@ -17,6 +17,7 @@ linkURLs = [
     ['Pictures', 'pictures.html'], 
     ['Fortune Cookie', 'fortune.html'], 
     ['Blogs', 'blog.html'],
+    ['API Practice', 'api_practice.html'],
     ['Test', 'test.html']
 ];
 function createNavBar() {
