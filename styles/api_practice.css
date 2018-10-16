@@ -1,4 +1,9 @@
-.weather-forecast h3 {
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+div h3 {
     color: #ffffff;
     font-size: 3rem;
 }
