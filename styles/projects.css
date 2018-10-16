@@ -77,3 +77,7 @@
     height: 20%;
     border-radius: 50%;
 }
+
+section > .button {
+    border-color: #99ff99;
+}
