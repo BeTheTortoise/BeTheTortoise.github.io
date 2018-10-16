@@ -30,6 +30,14 @@ function createImageDiv() {
     return theDiv;
 }
 
+const images = document.querySelectorAll('img');
+images.forEach(image => {
+    image.onclick = () => {
+        console.log(image.width);
+        image.width = 1000;
+    }
+});
+
 indexScript = document.createElement('script');
 indexScript.src = 'scripts/index.js';
 thisBody.appendChild(indexScript)
