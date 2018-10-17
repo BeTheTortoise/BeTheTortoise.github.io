@@ -57,11 +57,24 @@ twitterTrigger.addEventListener('click', () => {
 // 	.then( r => r.json() )
 // 	.then( j => console.log(j) );
 
-var map;
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
+    var directionsService = new google.maps.DirectionsService();
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 33, lng: -84},
+        zoom: 5
+    });
+    var directionsRequest = {};
+    directionsRequest.destination = {lat: 35.621, lng: -83.6775};
+    directionsRequest.origin = 'Springer Mountain, GA';
+    directionsRequest.travelMode = 'WALKING';
+    directionsService.route(directionsRequest, (result, status) => {
+        if (status == 'OK') {
+            directionsRenderer.setMap(map);
+            directionsRenderer.setDirections(result);
+        } else {
+            console.log(status);
+        }
     });
 }
 
