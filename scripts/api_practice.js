@@ -2,15 +2,19 @@ const thisBody = document.querySelector('body');
 
 const h3Array = document.querySelectorAll('h3');
 const gotCharTrigger = document.querySelector('[data-trigger]');
-
 gotCharTrigger.addEventListener('click', (
     () => {
         const charNum = Math.floor(Math.random() * 2000);
+        let charString = '';
         fetch(`https://anapioficeandfire.com/api/characters/${charNum}`)
             .then( r => r.json() )
             .then( j => {
                 console.log(j);
-                h3Array[1].textContent = j.name + ' "' + j.aliases[0] + '" ';
+                charString = j.titles.join(', ');
+                charString = charString + ' ' + j.name;
+                charString = charString + ', ' + j.aliases.join(', ');
+                // charString = charString + 'hellooooo';
+                h3Array[1].textContent = charString;
             });
             
         //     .then( j => console.log(j) );

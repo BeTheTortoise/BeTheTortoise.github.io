@@ -1,7 +1,19 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+}
+
+.weather-forecast {
+    margin-top: 15%;
+}
+
+.twitter-feed {
+    margin-bottom: 20%;
+}
+
+.api-div {
+    border-color: #ff9900;
 }
 div h3 {
     color: #9999ff;
