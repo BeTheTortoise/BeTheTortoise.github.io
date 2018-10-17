@@ -9,15 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="weather-forecast api-div button">
-        <h3>The weather in blah blah is bad.</h3>
-    </div>
-    <div class="got-character api-div button">
-        <h3>His name was Jon Snow.</h3>
-        <button data-trigger>Get a new character.</button>
-    </div>
-    <div class="twitter-feed api-div button">
-        <h3>This one is empty.</h3>
+    <div class="main-div">
+        <div class="weather-forecast api-div button">
+            <h3 data-output="weather">The weather in blah blah is bad.</h3>
+            <button data-trigger="weather">Get my local weather.</button>
+        </div>
+        <div class="got-character api-div button">
+            <h3 data-output="got">His name was Jon Snow.</h3>
+            <button data-trigger="got">Get a new character.</button>
+        </div>
+        <div class="twitter-feed api-div button">
+            <h3 data-output="twitter">This one is empty.</h3>
+            <button data-trigger="twitter">Get my tweets.</button>
+        </div>
     </div>
     <script src="scripts/api_practice.js"></script>
 </body>

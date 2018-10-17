@@ -1,16 +1,17 @@
-body {
+.main-div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: 10% 0;
 }
 
-.weather-forecast {
+/* .weather-forecast {
     margin-top: 15%;
 }
 
 .twitter-feed {
     margin-bottom: 20%;
-}
+} */
 
 .api-div {
     border-color: #ff9900;
