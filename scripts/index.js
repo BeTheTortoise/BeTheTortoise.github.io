@@ -1,4 +1,4 @@
-{/* <nav class="nav-bar">
+/* <nav class="nav-bar">
 <a class="button" href="#project1">Fantasy Football Scheduler</a>
 <a class="button" href="#project2">Task Magic</a>
 <a class="button" href="#project3">This Website</a>
@@ -6,7 +6,7 @@
 <a class="button" href="pictures.html">Pictures</a>
 <a class="button" href="fortune.html">Fortune Cookie</a>
 <a class="button" href="blog.html">Blogs</a>
-</nav> */}
+</nav> */
 const theBody = document.querySelector('body');
 
 linkURLs = [
@@ -21,7 +21,7 @@ linkURLs = [
     ['Test', 'test.html']
 ];
 function createNavBar() {
-    let tempNavBar = document.createElement('nav');
+    const tempNavBar = document.createElement('nav');
     tempNavBar.classList.add('nav-bar');
     // tempNavBar.classList.add('disappearing');
     createNavLinks(tempNavBar);
@@ -31,7 +31,7 @@ function createNavBar() {
 }
 function createNavLinks(navBar) {
     linkURLs.forEach(project => {
-        let link = document.createElement('a');
+        const link = document.createElement('a');
         link.classList.add('button');
         link.textContent = project[0];
         link.href = project[1];
@@ -42,7 +42,7 @@ const myNavBar = createNavBar();
 theBody.appendChild(myNavBar);
 
 function setNavTop() {
-    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px');
+    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight - 5) + 'px');
 }
 
 function scrollNavBar() {

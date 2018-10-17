@@ -10,7 +10,7 @@ gotCharTrigger.addEventListener('click', (
             .then( r => r.json() )
             .then( j => {
                 console.log(j);
-                h3Array[1].textContent = j.name + j.aliases[0];
+                h3Array[1].textContent = j.name + ' "' + j.aliases[0] + '" ';
             });
             
         //     .then( j => console.log(j) );
@@ -22,7 +22,7 @@ gotCharTrigger.addEventListener('click', (
 // 	.then( j => console.log(j) );
 
 const scripts = document.querySelectorAll('script');
-scripts.forEach((script) => thisBody.appendChild(script));
+thisBody.appendChild(scripts[scripts.length - 1]);
 
 indexScript = document.createElement('script');
 indexScript.src = 'scripts/index.js';
