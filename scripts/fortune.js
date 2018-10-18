@@ -93,11 +93,11 @@ function createFortuneButton() {
 const thisBody = document.querySelector('body');
 const topDiv = document.querySelector('div');
 topDiv.appendChild(createFortuneSection());
-const scripts = document.querySelectorAll('script');
-thisBody.appendChild(scripts[scripts.length - 1]);
+// const scripts = document.querySelectorAll('script');
+// thisBody.appendChild(scripts[scripts.length - 1]);
 
-// }
+// // }
 
-indexScript = document.createElement('script');
-indexScript.src = 'scripts/index.js';
-thisBody.appendChild(indexScript)
+// indexScript = document.createElement('script');
+// indexScript.src = 'scripts/index.js';
+// thisBody.appendChild(indexScript)
