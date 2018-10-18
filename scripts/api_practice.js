@@ -75,12 +75,14 @@ function initMap() {
         } else {
             console.log(status);
         }
+        
     });
 }
 
-const scripts = document.querySelectorAll('script');
-thisBody.appendChild(scripts[scripts.length - 1]);
+// const scripts = document.querySelectorAll('script');
+// thisBody.appendChild(scripts[scripts.length - 1]);
 
-indexScript = document.createElement('script');
-indexScript.src = 'scripts/index.js';
-thisBody.appendChild(indexScript)
+// indexScript = document.createElement('script');
+// indexScript.src = 'scripts/index.js';
+// thisBody.appendChild(indexScript)
+// window.onresize = () => document.getElementById('map').style.height = document.getElementById('map').style.width;
