@@ -58,7 +58,7 @@ twitterTrigger.addEventListener('click', () => {
                 "ContentType": "application/x-www-form-urlencoded;charset=UTF-8",
             },
             body: "grant_type=client_credentials",
-            mode: "no-cors",
+            // mode: "no-cors",
         }
     )
         .then(j => {
