@@ -44,14 +44,32 @@ const weatherTrigger = document.querySelector('[data-trigger="weather"]').addEve
 const twitterOutput = document.querySelector('[data-output="twitter"]');
 const twitterTrigger = document.querySelector('[data-trigger="twitter"]');
 twitterTrigger.addEventListener('click', () => {
-    const apiKey = 'V5dFFzruyW5YolYSCGjMlMLVn:kywj7HLYoxbspDbsuF0JUfBO0o9J0uvOmsNWYiEp0vUUqapfVc';
-    outputString = '';
-    fetch('https://api.openweathermap.org/data/2.5/weather?zip=30328,us&APPID=adfd069d135d0801d35399323f1ea34c')
-        .then( r => r.json())
-        .then( j => {
+    const apiPublicKey = 'V5dFFzruyW5YolYSCGjMlMLVn';
+    const apiSecretKey = 'kywj7HLYoxbspDbsuF0JUfBO0o9J0uvOmsNWYiEp0vUUqapfVc';
+    const encodedKey = encodeURI(apiPublicKey) + ':' + encodeURI(apiSecretKey);
+    const b64Key = btoa(encodedKey);
+    // Get bearer token
+    fetch(
+        `https://api.twitter.com/oauth2/token`,
+        {
+            method: "POST",
+            headers: {
+                "Authorization": `Basic ${b64Key}`,
+                "ContentType": "application/x-www-form-urlencoded;charset=UTF-8",
+            },
+            body: "grant_type=client_credentials",
+            mode: "no-cors",
+        }
+    )
+        .then(j => {
             console.log(j);
-            twitterOutput.textContent = 'hello';
-        });
+            if (j.status == 0) {
+                console.log(j);
+            } else {
+                console.log(j.statusText);
+            }
+        })
+        .catch(() => twitterOutput.textContent = "Bad request");
 });
 // fetch('https://api.icndb.com/jokes/random')
 // 	.then( r => r.json() )
@@ -75,7 +93,6 @@ function initMap() {
         } else {
             console.log(status);
         }
-        
     });
 }
 
