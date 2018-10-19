@@ -15,6 +15,7 @@ const myImages = [
 thisBody.appendChild(createImageDiv());
 // thisBody.appendChild(createImageDiv());
 // thisBody.appendChild(createImageDiv());
+thisBody.onload = scrollToSecondImage;
 thisBody.onscroll = scrollImageDiv;
 const outputElement = document.querySelector('[data-output]');
 const modalElement = document.querySelector('[data-modal]');
@@ -60,30 +61,53 @@ function createImageElement(src) {
 }
 
 function scrollImageDiv() {
+    console.log(window.scrollY, thisBody.scrollHeight);
+    console.log(window.innerHeight, thisBody.offsetHeight);
+    // console.log(window.scrollY);
     // for scrolling up
     // take top 2 image containers, find heights
-    const myImageDiv = document.getElementsByClassName('imagesGrid');
-    // when container has scrolled past those heights
+    const myImageDiv = document.getElementsByClassName('imagesGrid')[0];
     const pageImages = document.querySelectorAll('img.button');
-    console.log(window.scrollY);
-    console.log(pageImages[0].scrollHeight);
-    const twoImageHeight = pageImages[0].scrollHeight + pageImages[1].scrollHeight;
-    if (window.scrollY > twoImageHeight) {
+    const lastImageIndex = pageImages.length - 1;
+    const topTwoImageHeight = pageImages[0].scrollHeight + pageImages[1].scrollHeight;
+    const bottomTwoImageHeight = pageImages[lastImageIndex].scrollHeight + pageImages[lastImageIndex - 1].scrollHeight;
+    // when container has scrolled past those heights
+    console.log(topTwoImageHeight, bottomTwoImageHeight);
+    if (window.scrollY > topTwoImageHeight) {
     // remove top image
-        console.log('Removing image');
+        console.log('Removing image from top');
         pageImages[0].parentNode.removeChild(pageImages[0]);
-    // scroll up top image's height to maintain scroll position
     };
     // if scrolled to bottom of container
     const bodyLength = thisBody.scrollHeight;
-    console.log(bodyLength);
-    if (window.scrollY + window.innerHeight == thisBody.scrollHeight) {
+    // console.log(bodyLength);
+    if (thisBody.scrollHeight - window.innerHeight - window.scrollY < bottomTwoImageHeight) {
     // add new image to bottom
+        console.log('adding image to bottom')
         const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
-        console.log(randomImageSrc);
-        console.log('hello');
-        myImageDiv[0].appendChild(createImageElement(randomImageSrc));
+        // console.log(randomImageSrc);
+        myImageDiv.appendChild(createImageElement(randomImageSrc));
     };
+
+    // for scrolling down
+    // take bottom 2 image containers and heights
+    // when container has scrolled past those heights
+    // if (window.scrollY > bottomTwoImageHeight) {
+    //     // remove bottom image
+    //     console.log('removing image from bottom');
+    //     pageImages[lastImageIndex].parentNode.removeChild(pageImages[lastImageIndex]);
+    // };
+    // // if scrolled to top of container
+    // if (window.scrollY < topTwoImageHeight) {
+    // // add new image to top
+    //     console.log('adding image to top');
+    //     const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
+    //     const randomImgElement = createImageElement(randomImageSrc);
+    //     myImageDiv.insertBefore(randomImgElement, pageImages[0]);
+    //     window.scrollTo({top: topTwoImageHeight});
+    // };
+
+
     // let bodyScroll = window.scrollY;
     // console.log(bodyLength);
     // console.log(window.scrollY);
@@ -94,6 +118,12 @@ function scrollImageDiv() {
     // }
     // console.log(window.scrollY);
 }
+
+function scrollToSecondImage() {
+    const pageImages = document.querySelectorAll('img.button');
+    window.scrollTo({top: pageImages[0].scrollHeight});
+    console.log(window.scrollY);
+}  
 
 const scripts = document.querySelectorAll('script');
 scripts.forEach((script) => thisBody.appendChild(script));
