@@ -42,6 +42,7 @@ function createImageElement(src) {
     const newImage = document.createElement('img');
     newImage.src = src;
     newImage.classList.add('button');
+    newImage.classList.add('pageImage');
         // add an event listener to the image
     newImage.addEventListener('click', function (event) {
         console.log('hello!');
@@ -61,45 +62,73 @@ function createImageElement(src) {
 }
 
 function scrollImageDiv() {
-    console.log(window.scrollY, thisBody.scrollHeight);
+    const bodyLength = thisBody.scrollHeight;
+    const frameLength = window.innerHeight;
+    const aboveFrameLength = window.scrollY;
+    const imagesDiv = document.getElementsByClassName('imagesGrid')[0];
+    const pageImages = document.getElementsByClassName('pageImage');
+    console.log(imagesDiv, pageImages);
+    const topImageLength = pageImages[0].scrollHeight;
+    const topTwoImagesLength = topImageLength + pageImages[1].scrollHeight;
+    const lastImageLength = pageImages[pageImages.length - 1].scrollHeight;
+    const lastTwoImagesLength = lastImageLength + pageImages[pageImages.length - 2].scrollHeight;
+    console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
+    
+    // if there are two photos below frame, remove photo from bottom
+    if (bodyLength > frameLength + aboveFrameLength + lastTwoImagesLength) {
+        console.log('removing photo');
+        console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
+        imagesDiv.removeChild(pageImages[pageImages.length - 1]);
+    } else if (bodyLength < aboveFrameLength + frameLength + lastImageLength) {
+        // if there is less than one photo below frame, add photo to bottom
+        console.log('adding photo');
+        console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
+        const randomImageSrc = myImages[Math.floor(Math.random() * (myImages.length - 1))];
+        const randomImgElement = createImageElement(randomImageSrc);
+        randomImgElement.src = randomImageSrc;
+        imagesDiv.appendChild(randomImgElement);
+    }
+    // if there are two photos above frame, remove photo from top
+    // if there is not one photo above frame, add photo to top
+
     // console.log(window.scrollY);
     // for scrolling up
     // take top 2 image containers, find heights
-    const myImageDiv = document.getElementsByClassName('imagesGrid')[0];
-    const pageImages = document.querySelectorAll('img.button');
-    const lastImageIndex = pageImages.length - 1;
-    const topTwoImageHeight = pageImages[0].scrollHeight + pageImages[1].scrollHeight;
-    const bottomTwoImageHeight = pageImages[lastImageIndex].scrollHeight + pageImages[lastImageIndex - 1].scrollHeight;
-    const bodyLength = thisBody.scrollHeight;
-    // when container has scrolled past those heights
-    console.log(topTwoImageHeight, bottomTwoImageHeight);
-    if (window.scrollY > topTwoImageHeight) {
-    // remove top image
-        console.log('Removing image from top');
-        pageImages[0].parentNode.removeChild(pageImages[0]);
-    } else if (window.scrollY < topTwoImageHeight) {
-        // // if scrolled to top of container
-    // add new image to top
-        console.log('adding image to top');
-        // const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
-        // const randomImgElement = createImageElement(randomImageSrc);
-        // console.log(myImageDiv, pageImages[0]);
-        // // myImageDiv.insertBefore(randomImgElement, pageImages[0].parentNode.firstChild);
-        // window.scrollTo({top: topTwoImageHeight});
-    } else if (bodyLength - window.innerHeight - window.scrollY < bottomTwoImageHeight) {
-    // add new image to bottom
-        console.log('adding image to bottom')
-        const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
-        // console.log(randomImageSrc);
-        myImageDiv.appendChild(createImageElement(randomImageSrc));
-    } else if (bodyLength - window.innerHeight - window.scrollY > bottomTwoImageHeight) {
-        // for scrolling down
-        // take bottom 2 image containers and heights
-        // when container has scrolled past those heights
-        // remove bottom image
-        console.log('removing image from bottom');
-        pageImages[lastImageIndex].parentNode.removeChild(pageImages[lastImageIndex]);         
-    };
+    // const myImageDiv = document.getElementsByClassName('imagesGrid')[0];
+    // const pageImages = document.querySelectorAll('img.button');
+    // const lastImageIndex = pageImages.length - 1;
+    // const topTwoImageHeight = pageImages[0].scrollHeight + pageImages[1].scrollHeight;
+    // const bottomTwoImageHeight = pageImages[lastImageIndex].scrollHeight + pageImages[lastImageIndex - 1].scrollHeight;
+    // const bodyLength = thisBody.scrollHeight;
+    // // when container has scrolled past those heights
+    // console.log(topTwoImageHeight, bottomTwoImageHeight);
+    // if (window.scrollY > topTwoImageHeight) {
+    // // remove top image
+    //     console.log('Removing image from top');
+    //     pageImages[0].parentNode.removeChild(pageImages[0]);
+    // } else if (window.scrollY < topTwoImageHeight) {
+    //     // // if scrolled to top of container
+    // // add new image to top
+    //     console.log('adding image to top');
+    //     const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
+    //     const randomImgElement = createImageElement(randomImageSrc);
+    //     console.log(myImageDiv, pageImages[0]);
+    //     // myImageDiv.insertBefore(randomImgElement, pageImages[0].parentNode.firstChild);
+    //     window.scrollTo({top: topTwoImageHeight});
+    // } else if (bodyLength - window.innerHeight - window.scrollY < bottomTwoImageHeight) {
+    // // add new image to bottom
+    //     console.log('adding image to bottom')
+    //     const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
+    //     // console.log(randomImageSrc);
+    //     myImageDiv.appendChild(createImageElement(randomImageSrc));
+    // } else if (bodyLength - window.innerHeight - window.scrollY > bottomTwoImageHeight) {
+    //     // for scrolling down
+    //     // take bottom 2 image containers and heights
+    //     // when container has scrolled past those heights
+    //     // remove bottom image
+    //     console.log('removing image from bottom');
+    //     pageImages[lastImageIndex].parentNode.removeChild(pageImages[lastImageIndex]);         
+    // };
 
     
 
