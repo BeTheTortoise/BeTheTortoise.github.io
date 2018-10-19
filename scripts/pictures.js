@@ -61,10 +61,18 @@ function createImageElement(src) {
     return newImage;
 }
 
+function createRandomImageElement() {
+    const randomImageSrc = myImages[Math.floor(Math.random() * (myImages.length - 1))];
+    const randomImgElement = createImageElement(randomImageSrc);
+    randomImgElement.src = randomImageSrc;
+    return randomImgElement;
+}
+
 function scrollImageDiv() {
     const bodyLength = thisBody.scrollHeight;
     const frameLength = window.innerHeight;
     const aboveFrameLength = window.scrollY;
+    const belowFrameLength = bodyLength - frameLength - aboveFrameLength;
     const imagesDiv = document.getElementsByClassName('imagesGrid')[0];
     const pageImages = document.getElementsByClassName('pageImage');
     console.log(imagesDiv, pageImages);
@@ -75,21 +83,27 @@ function scrollImageDiv() {
     console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
     
     // if there are two photos below frame, remove photo from bottom
-    if (bodyLength > frameLength + aboveFrameLength + lastTwoImagesLength) {
-        console.log('removing photo');
-        console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
+    if (belowFrameLength > lastTwoImagesLength) {
+        console.log('removing bottom photo');
+        console.log(bodyLength, frameLength, aboveFrameLength, lastTwoImagesLength);
         imagesDiv.removeChild(pageImages[pageImages.length - 1]);
-    } else if (bodyLength < aboveFrameLength + frameLength + lastImageLength) {
+    } else if (belowFrameLength < lastImageLength) {
         // if there is less than one photo below frame, add photo to bottom
-        console.log('adding photo');
-        console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
-        const randomImageSrc = myImages[Math.floor(Math.random() * (myImages.length - 1))];
-        const randomImgElement = createImageElement(randomImageSrc);
-        randomImgElement.src = randomImageSrc;
+        console.log('adding bottom photo');
+        console.log(bodyLength, aboveFrameLength, frameLength, lastImageLength);
+        const randomImgElement = createRandomImageElement();
         imagesDiv.appendChild(randomImgElement);
-    }
+    } else if (aboveFrameLength > topTwoImagesLength) {
     // if there are two photos above frame, remove photo from top
+        console.log('removing top photo');
+        console.log(aboveFrameLength, topTwoImagesLength);
+        imagesDiv.removeChild(pageImages[0]);
+    } else if (aboveFrameLength < topImageLength) {
     // if there is not one photo above frame, add photo to top
+        console.log('adding top photo');
+        console.log(aboveFrameLength, topImageLength);
+        imagesDiv.insertBefore(createRandomImageElement(), pageImages[0]);
+    }
 
     // console.log(window.scrollY);
     // for scrolling up
