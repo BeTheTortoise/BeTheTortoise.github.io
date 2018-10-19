@@ -77,15 +77,15 @@ function scrollImageDiv() {
     const pageImages = document.getElementsByClassName('pageImage');
     console.log(imagesDiv, pageImages);
     const topImageLength = pageImages[0].scrollHeight;
-    const topTwoImagesLength = topImageLength + pageImages[1].scrollHeight;
+    const topThreeImagesLength = topImageLength + pageImages[1].scrollHeight + pageImages[2].scrollHeight;
     const lastImageLength = pageImages[pageImages.length - 1].scrollHeight;
-    const lastTwoImagesLength = lastImageLength + pageImages[pageImages.length - 2].scrollHeight;
-    console.log(bodyLength, frameLength, topTwoImagesLength, lastTwoImagesLength);
+    const lastThreeImagesLength = lastImageLength + pageImages[pageImages.length - 2].scrollHeight + pageImages[pageImages.length - 3].scrollHeight;
+    console.log(bodyLength, frameLength, topThreeImagesLength, lastThreeImagesLength);
     
     // if there are two photos below frame, remove photo from bottom
-    if (belowFrameLength > lastTwoImagesLength) {
+    if (belowFrameLength > lastThreeImagesLength) {
         console.log('removing bottom photo');
-        console.log(bodyLength, frameLength, aboveFrameLength, lastTwoImagesLength);
+        console.log(bodyLength, frameLength, aboveFrameLength, lastThreeImagesLength);
         imagesDiv.removeChild(pageImages[pageImages.length - 1]);
     } else if (belowFrameLength < lastImageLength) {
         // if there is less than one photo below frame, add photo to bottom
@@ -93,10 +93,10 @@ function scrollImageDiv() {
         console.log(bodyLength, aboveFrameLength, frameLength, lastImageLength);
         const randomImgElement = createRandomImageElement();
         imagesDiv.appendChild(randomImgElement);
-    } else if (aboveFrameLength > topTwoImagesLength) {
+    } else if (aboveFrameLength > topThreeImagesLength) {
     // if there are two photos above frame, remove photo from top
         console.log('removing top photo');
-        console.log(aboveFrameLength, topTwoImagesLength);
+        console.log(aboveFrameLength, topThreeImagesLength);
         imagesDiv.removeChild(pageImages[0]);
     } else if (aboveFrameLength < topImageLength) {
     // if there is not one photo above frame, add photo to top
