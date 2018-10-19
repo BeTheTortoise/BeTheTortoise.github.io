@@ -44,8 +44,10 @@ const weatherTrigger = document.querySelector('[data-trigger="weather"]').addEve
 const twitterOutput = document.querySelector('[data-output="twitter"]');
 const twitterTrigger = document.querySelector('[data-trigger="twitter"]');
 twitterTrigger.addEventListener('click', () => {
-    const apiPublicKey = 'V5dFFzruyW5YolYSCGjMlMLVn';
-    const apiSecretKey = 'kywj7HLYoxbspDbsuF0JUfBO0o9J0uvOmsNWYiEp0vUUqapfVc';
+// This is space for the api key to be loaded securely
+
+
+
     const encodedKey = encodeURI(apiPublicKey) + ':' + encodeURI(apiSecretKey);
     const b64Key = btoa(encodedKey);
     // Get bearer token
