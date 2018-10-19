@@ -62,7 +62,7 @@ function createImageElement(src) {
 }
 
 function createRandomImageElement() {
-    const randomImageSrc = myImages[Math.floor(Math.random() * (myImages.length - 1))];
+    const randomImageSrc = myImages[Math.round(Math.random() * (myImages.length - 1))];
     const randomImgElement = createImageElement(randomImageSrc);
     randomImgElement.src = randomImageSrc;
     return randomImgElement;
