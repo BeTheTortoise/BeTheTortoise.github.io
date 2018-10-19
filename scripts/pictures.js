@@ -22,32 +22,41 @@ modalElement.addEventListener('click', () => modalElement.classList.add('modal-h
 
 function createImageDiv() {
     const theDiv = document.createElement('div');
-    const imagesList = myImages.map((src) => {
-        const newImage = document.createElement('img');
-        newImage.src = src;
-        newImage.classList.add('button');
-            // add an event listener to the image
-        newImage.addEventListener('click', function (event) {
-            console.log('hello!');
-            // the element that got clicked is accessible
-            // as `event.target`
-            // And, I can read the `src` attribute!
-            console.log(event.target.src);
-
-            // I can now set the output image's src
-        // to event.target.src!
-            outputElement.setAttribute('src', event.target.src);
-            // modalElement.classList.toggle('modal-hidden');
-            // "remove" is more specific, so we'll use that. yeah!
-            modalElement.classList.remove('modal-hidden');
-        });
-        return newImage
-    });
+    const imagesList = createImageElementsList(myImages);
     imagesList.forEach((img) => {
         theDiv.appendChild(img);
     });
     theDiv.classList.add('imagesGrid');
     return theDiv;
+}
+
+function createImageElementsList(images) {
+    return images.map((src) => {
+        const newImage = createImageElement(src);
+        return newImage
+    });
+}
+
+function createImageElement(src) {
+    const newImage = document.createElement('img');
+    newImage.src = src;
+    newImage.classList.add('button');
+        // add an event listener to the image
+    newImage.addEventListener('click', function (event) {
+        console.log('hello!');
+        // the element that got clicked is accessible
+        // as `event.target`
+        // And, I can read the `src` attribute!
+        console.log(event.target.src);
+
+        // I can now set the output image's src
+    // to event.target.src!
+        outputElement.setAttribute('src', event.target.src);
+        // modalElement.classList.toggle('modal-hidden');
+        // "remove" is more specific, so we'll use that. yeah!
+        modalElement.classList.remove('modal-hidden');
+    });
+    return newImage;
 }
 
 function scrollImageDiv() {
@@ -66,9 +75,15 @@ function scrollImageDiv() {
     // scroll up top image's height to maintain scroll position
     };
     // if scrolled to bottom of container
+    const bodyLength = thisBody.scrollHeight;
+    console.log(bodyLength);
+    if (window.scrollY + window.innerHeight == thisBody.scrollHeight) {
     // add new image to bottom
-
-    // const bodyLength = thisBody.scrollHeight;
+        const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
+        console.log(randomImageSrc);
+        console.log('hello');
+        myImageDiv[0].appendChild(createImageElement(randomImageSrc));
+    };
     // let bodyScroll = window.scrollY;
     // console.log(bodyLength);
     // console.log(window.scrollY);
