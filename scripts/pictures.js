@@ -1,4 +1,5 @@
 const thisBody = document.querySelector('body');
+// thisBody.overflow = 'hidden';
 
 const myImages = [
     'images/sad-images/sad_asteroid.jpg',
@@ -12,6 +13,9 @@ const myImages = [
     'images/me.jpg'
 ]
 thisBody.appendChild(createImageDiv());
+// thisBody.appendChild(createImageDiv());
+// thisBody.appendChild(createImageDiv());
+thisBody.onscroll = scrollImageDiv;
 const outputElement = document.querySelector('[data-output]');
 const modalElement = document.querySelector('[data-modal]');
 modalElement.addEventListener('click', () => modalElement.classList.add('modal-hidden'));
@@ -46,9 +50,39 @@ function createImageDiv() {
     return theDiv;
 }
 
+function scrollImageDiv() {
+    // for scrolling up
+    // take top 2 image containers, find heights
+    const myImageDiv = document.getElementsByClassName('imagesGrid');
+    // when container has scrolled past those heights
+    const pageImages = document.querySelectorAll('img.button');
+    console.log(window.scrollY);
+    console.log(pageImages[0].scrollHeight);
+    const twoImageHeight = pageImages[0].scrollHeight + pageImages[1].scrollHeight;
+    if (window.scrollY > twoImageHeight) {
+    // remove top image
+        console.log('Removing image');
+        pageImages[0].parentNode.removeChild(pageImages[0]);
+    // scroll up top image's height to maintain scroll position
+    };
+    // if scrolled to bottom of container
+    // add new image to bottom
+
+    // const bodyLength = thisBody.scrollHeight;
+    // let bodyScroll = window.scrollY;
+    // console.log(bodyLength);
+    // console.log(window.scrollY);
+    // if (bodyScroll > bodyLength * 2 / 3) {
+    //     window.scrollTo(0, bodyLength / 3);
+    // } else if (bodyScroll < bodyLength / 3) {
+    //     window.scrollTo(0, bodyLength * 2 / 3);
+    // }
+    // console.log(window.scrollY);
+}
+
 const scripts = document.querySelectorAll('script');
 scripts.forEach((script) => thisBody.appendChild(script));
 
-indexScript = document.createElement('script');
-indexScript.src = 'scripts/index.js';
-thisBody.appendChild(indexScript)
+// indexScript = document.createElement('script');
+// indexScript.src = 'scripts/index.js';
+// thisBody.appendChild(indexScript)
