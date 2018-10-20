@@ -2,8 +2,8 @@ const thisBody = document.querySelector('body');
 // thisBody.overflow = 'hidden';
 
 const myImages = [
-    'images/sad-images/sad_asteroid.jpg',
     'images/sad-images/sad_bear.jpg',
+    'images/sad-images/sad_asteroid.jpg',
     'images/sad-images/sad_cloud.jpg',
     'images/sad-images/sad_dino.jpg',
     'images/sad-images/sad_pig.jpg',
@@ -12,7 +12,10 @@ const myImages = [
     'images/coffee-table.jpg',
     'images/me.jpg'
 ]
+const availableImages = [];
+const shownImages = [];
 thisBody.appendChild(createImageDiv());
+// scrollToSecondImage();
 // thisBody.appendChild(createImageDiv());
 // thisBody.appendChild(createImageDiv());
 thisBody.onload = scrollToSecondImage;
@@ -45,7 +48,7 @@ function createImageElement(src) {
     newImage.classList.add('pageImage');
         // add an event listener to the image
     newImage.addEventListener('click', function (event) {
-        console.log('hello!');
+        console.log('focus image!');
         // the element that got clicked is accessible
         // as `event.target`
         // And, I can read the `src` attribute!
@@ -62,10 +65,32 @@ function createImageElement(src) {
 }
 
 function createRandomImageElement() {
-    const randomImageSrc = myImages[Math.round(Math.random() * (myImages.length - 1))];
+    const randomImageSrc = availableImages[Math.round(Math.random() * (availableImages.length - 1))];
     const randomImgElement = createImageElement(randomImageSrc);
     randomImgElement.src = randomImageSrc;
     return randomImgElement;
+}
+
+function addImage(pageImage) {
+    const srcIndex = availableImages.indexOf(pageImage.src);
+    if (srcIndex != -1) {
+        availableImages.splice(srcIndex, 1);
+    }
+    shownImages.push(pageImage.src);
+        // } else {
+    //     debugger;
+    //     console.log(srcIndex)
+    // }
+    console.log(shownImages, availableImages);
+}
+
+function removeImage(pageImage) {
+    const srcIndex = shownImages.indexOf(pageImage.src);
+    if (srcIndex != -1) {
+        shownImages.splice(srcIndex, 1);
+    }
+    availableImages.push(pageImage.src);
+    console.log(shownImages, availableImages);
 }
 
 function scrollImageDiv() {
@@ -75,34 +100,42 @@ function scrollImageDiv() {
     const belowFrameLength = bodyLength - frameLength - aboveFrameLength;
     const imagesDiv = document.getElementsByClassName('imagesGrid')[0];
     const pageImages = document.getElementsByClassName('pageImage');
-    console.log(imagesDiv, pageImages);
+    // console.log(imagesDiv, pageImages);
     const topImageLength = pageImages[0].scrollHeight;
     const topThreeImagesLength = topImageLength + pageImages[1].scrollHeight + pageImages[2].scrollHeight;
     const lastImageLength = pageImages[pageImages.length - 1].scrollHeight;
     const lastThreeImagesLength = lastImageLength + pageImages[pageImages.length - 2].scrollHeight + pageImages[pageImages.length - 3].scrollHeight;
-    console.log(bodyLength, frameLength, topThreeImagesLength, lastThreeImagesLength);
-    
+    // console.log(bodyLength, frameLength, topThreeImagesLength, lastThreeImagesLength);
+    console.log(aboveFrameLength, frameLength, belowFrameLength);
     // if there are two photos below frame, remove photo from bottom
     if (belowFrameLength > lastThreeImagesLength) {
         console.log('removing bottom photo');
-        console.log(bodyLength, frameLength, aboveFrameLength, lastThreeImagesLength);
+        // console.log(bodyLength, frameLength, aboveFrameLength, lastThreeImagesLength);
+        removeImage(pageImages[pageImages.length - 1]);
         imagesDiv.removeChild(pageImages[pageImages.length - 1]);
-    } else if (belowFrameLength < lastImageLength) {
+    }else if (belowFrameLength < lastImageLength) {
         // if there is less than one photo below frame, add photo to bottom
         console.log('adding bottom photo');
-        console.log(bodyLength, aboveFrameLength, frameLength, lastImageLength);
+        // console.log(bodyLength, aboveFrameLength, frameLength, lastImageLength);
         const randomImgElement = createRandomImageElement();
+        addImage(randomImgElement);
         imagesDiv.appendChild(randomImgElement);
-    } else if (aboveFrameLength > topThreeImagesLength) {
+    }else if (aboveFrameLength > topThreeImagesLength) {
     // if there are two photos above frame, remove photo from top
         console.log('removing top photo');
-        console.log(aboveFrameLength, topThreeImagesLength);
+        // console.log(aboveFrameLength, topThreeImagesLength);
+        removeImage(pageImages[0]);
         imagesDiv.removeChild(pageImages[0]);
-    } else if (aboveFrameLength < topImageLength) {
+    };
+    
+    if (aboveFrameLength < topImageLength) {
     // if there is not one photo above frame, add photo to top
         console.log('adding top photo');
-        console.log(aboveFrameLength, topImageLength);
-        imagesDiv.insertBefore(createRandomImageElement(), pageImages[0]);
+        // console.log(aboveFrameLength, topImageLength);
+        const randomImgElement = createRandomImageElement();
+        addImage(randomImgElement);
+        imagesDiv.insertBefore(randomImgElement, pageImages[0]);
+        // window.scrollTo({top: randomImgElement.scrollHeight});
     }
 
     // console.log(window.scrollY);
@@ -124,7 +157,7 @@ function scrollImageDiv() {
     //     // // if scrolled to top of container
     // // add new image to top
     //     console.log('adding image to top');
-    //     const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
+    //     const randomImageSrc = availableImages[Math.floor(Math.random() * availableImages.length)];
     //     const randomImgElement = createImageElement(randomImageSrc);
     //     console.log(myImageDiv, pageImages[0]);
     //     // myImageDiv.insertBefore(randomImgElement, pageImages[0].parentNode.firstChild);
@@ -132,7 +165,7 @@ function scrollImageDiv() {
     // } else if (bodyLength - window.innerHeight - window.scrollY < bottomTwoImageHeight) {
     // // add new image to bottom
     //     console.log('adding image to bottom')
-    //     const randomImageSrc = myImages[Math.floor(Math.random() * myImages.length)];
+    //     const randomImageSrc = availableImages[Math.floor(Math.random() * availableImages.length)];
     //     // console.log(randomImageSrc);
     //     myImageDiv.appendChild(createImageElement(randomImageSrc));
     // } else if (bodyLength - window.innerHeight - window.scrollY > bottomTwoImageHeight) {
@@ -160,7 +193,9 @@ function scrollImageDiv() {
 
 function scrollToSecondImage() {
     const pageImages = document.querySelectorAll('img.button');
-    window.scrollTo({top: pageImages[0].scrollHeight});
+    window.scrollTo({top: pageImages[0].height + pageImages[1].height});
+    window.scrollTo({top: pageImages[0].height + pageImages[1].height});
+    console.log(pageImages[0]);
     console.log(window.scrollY);
 }  
 

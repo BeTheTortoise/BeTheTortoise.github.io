@@ -47,13 +47,13 @@ function setNavTop() {
 
 function scrollNavBar() {
     const navLength = myNavBar.scrollWidth;
-    console.log(navLength);
+    // console.log(navLength);
     if (myNavBar.scrollLeft > navLength * 2 / 3) {
         myNavBar.scrollLeft = navLength / 3;
     } else if (myNavBar.scrollLeft < navLength / 3) {
         myNavBar.scrollLeft = navLength * 2 / 3;
     }
-    console.log(myNavBar.scrollLeft);
+    // console.log(myNavBar.scrollLeft);
     // if reach end of nav bar, append new nav bar to end
     // if at beginning of nav bar, prepend new nav bar
 }
