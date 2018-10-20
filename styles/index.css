@@ -10,6 +10,11 @@ html, body {
     background-attachment: fixed;
 }
 
+.hero-text:hover {
+    color: #9999ff;
+    transition: color, 1.5s;
+}
+
 .sticky {
     position: sticky;
     top: 0;

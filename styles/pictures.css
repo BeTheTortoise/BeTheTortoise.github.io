@@ -3,7 +3,7 @@
     flex-flow: column;
     justify-content: space-between;
     margin: auto;
-    padding: 0 10%;
+    /* padding: 0 10%; */
     max-width: 400px;
 } 
 
@@ -21,15 +21,17 @@ div > .button {
 }
 
 .picture-frame {
-    width: 90%;
-    /* outline: 5px solid red; */
+    /* width: ; */
     margin: 0 auto;
     text-align: center;
 }
+
 .picture-frame > img {
+    border: 5px solid #ff9900;
+    border-radius: 20px;
     /* the img adapts to its parent */
     /* definitely, absolutely use both max-height and max-width */
-    max-height: 100%;
+    /* max-height: 100%; */
     max-width: 100%;
 }
 
