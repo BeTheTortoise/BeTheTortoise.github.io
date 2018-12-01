@@ -19,7 +19,7 @@ linkURLs = [
     ['Blogs', 'blog.html'],
     ['API Practice', 'api_practice.html'],
     ['Test', 'test.html'],
-    ['My Space App', 'space-app']
+    ['My Space App', 'http://my-space-app.collinargo.com']
 ];
 function createNavBar() {
     const tempNavBar = document.createElement('nav');
