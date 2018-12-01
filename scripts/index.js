@@ -18,7 +18,8 @@ linkURLs = [
     ['Fortune Cookie', 'fortune.html'], 
     ['Blogs', 'blog.html'],
     ['API Practice', 'api_practice.html'],
-    ['Test', 'test.html']
+    ['Test', 'test.html'],
+    ['My Space App', 'space-app']
 ];
 function createNavBar() {
     const tempNavBar = document.createElement('nav');
