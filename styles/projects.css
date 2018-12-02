@@ -17,6 +17,12 @@
     top: 60px;
 }
 
+@media screen and (max-width: 900px) {
+    .hero-text {
+        margin-right: 0;
+    }
+}
+
 
 .previews {
     display: flex;
@@ -45,14 +51,21 @@
     margin: 5% auto;
 }
 
-.content {
-    display: inline;
+.projects {
     font-size: 3rem;
+    /* display: flex;
+    flex-direction: column; */
+    height: 100%;
 }
 
-/* .project {
-    background-color: rgba(255, 255, 255, 0.5);
-} */
+.project {
+    height: 100%;
+}
+
+.project > .button {
+    overflow: scroll;
+    /* height: 100%; */
+}
 
 .project-title {
     white-space: normal;
@@ -76,6 +89,12 @@
     min-height: 140px;
     height: 20%;
     border-radius: 50%;
+    position: sticky;
+    right: 0;
+    top: 0;
+    padding-left: 0;
+    margin-left: 0;
+    opacity: .9;
 }
 
 section > .button {

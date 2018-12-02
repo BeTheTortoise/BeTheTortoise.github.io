@@ -10,9 +10,18 @@ html, body {
     background-attachment: fixed;
 }
 
+/* .hero-image {
+    position: absolute;
+    opacity: 0.85;
+} */
+
 .hero-text:hover {
     color: #9999ff;
     transition: color, 1.5s;
+}
+
+header {
+    height: 100%;
 }
 
 .sticky {
