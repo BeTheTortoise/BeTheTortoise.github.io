@@ -115,3 +115,21 @@ a:link {
 a:active {
     color: #999999;
 }
+
+#left-arrow {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 20%;
+    z-index: 1000;
+}
+
+#right-arrow {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: 20%;
+    z-index: 1000;
+}

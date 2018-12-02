@@ -9,6 +9,8 @@
 </nav> */
 const theBody = document.querySelector('body');
 const theURL = window.URL
+const leftArrow = document.getElementById('left-arrow')
+const rightArrow = document.getElementById('right-arrow')
 
 linkURLs = [
     ['Fantasy Football Scheduler', 'http://ffscheduler.collinargo.com'], 
@@ -43,6 +45,17 @@ function createNavLinks(navBar) {
 }
 const myNavBar = createNavBar();
 theBody.appendChild(myNavBar);
+
+leftArrow.onclick = scrollNavBarClick
+rightArrow.onclick = scrollNavBarClick
+
+function scrollNavBarClick(e) {
+    if (e.target.id == 'left-arrow') {
+        myNavBar.scrollTo((myNavBar.scrollLeft + 100), 0)
+    } else {
+        myNavBar.scrollTo((myNavBar.scrollLeft - 100), 0)
+    }
+}
 
 function setNavTop() {
     myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight - 5) + 'px');
