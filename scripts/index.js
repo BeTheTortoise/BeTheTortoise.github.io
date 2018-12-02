@@ -13,17 +13,17 @@ const leftArrow = document.getElementById('left-arrow')
 const rightArrow = document.getElementById('right-arrow')
 
 linkURLs = [
-    ['Fantasy Football Scheduler', 'http://ffscheduler.collinargo.com'], 
-    ['Task Magic', 'http://taskmagic.collinargo.com'], 
-    ['This Website', 'http://collinargo.com'], 
+    ['Fantasy Football Scheduler', '#project1'], 
+    ['Task Magic', '#project2'], 
+    ['This Website', '#project3'], 
     // ['Space Explorer', 'index.html#project4'], 
     ['Pictures', 'pictures.html'], 
     // ['Fortune Cookie', 'fortune.html'], 
     // ['Blogs', 'blog.html'],
     // ['API Practice', 'api_practice.html'],
     // ['Test', 'test.html'],
-    ['My Space App', 'http://myspaceapp.collinargo.com'],
-    ['FitFoodTracker', 'http://fitfoodtracker.collinargo.com']
+    ['My Space App', '#project4'],
+    ['FitFoodTracker', '#project5']
 ];
 function createNavBar() {
     const tempNavBar = document.createElement('nav');

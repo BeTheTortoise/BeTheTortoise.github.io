@@ -1,60 +1,8 @@
-.hero-image {
-    /* background-image: url("../images/the_universe.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 150%; */
-    /* background-position: center; */
-    display: flex;
-    height: 600px; 
+.projects-wrapper {
+    height: 100%;
 }
-
-.hero-text {
-    font-size: 6rem;
-    color: #ffffff;
-    margin: auto;
-    text-align: center;
-    vertical-align: center;
-    top: 60px;
-}
-
-@media screen and (max-width: 900px) {
-    .hero-text {
-        margin-right: 0;
-    }
-}
-
-
-.previews {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-around;
-}
-
-.preview {
-    margin: 10px 0;
-    width: 40%;
-}
-
-.preview h4 {
-    font-size: 1.5rem;
-    text-align: center;
-    word-wrap: normal;
-    /* padding: auto; */
-    margin: 0;
-    border-bottom: solid 1px #9999ff;
-}
-
-.preview img {
-    display: block;
-    width: 80%;
-    margin: 5% auto;
-}
-
 .projects {
     font-size: 3rem;
-    /* display: flex;
-    flex-direction: column; */
     height: 100%;
 }
 
@@ -62,9 +10,9 @@
     height: 100%;
 }
 
-.project > .button {
+.project-content {
     overflow: scroll;
-    /* height: 100%; */
+    height: 65%;
 }
 
 .project-title {

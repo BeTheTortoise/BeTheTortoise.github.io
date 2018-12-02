@@ -20,51 +20,55 @@
         </div>
     </header>
     <!-- content -->
-    <section class="sticky content"> 
+    <div class='sticky projects-wrapper'>
         <section class="sticky projects">
             <div class="sticky project">
-                <a name="project1">
-                    <h3 class="project-title button">Fantasy Football Scheduler</h3>
-                </a>
-                <div class="button">
+                <h3 id="project1" class="project-title button">Fantasy Football Scheduler</h3>
+                <div class="project-content button">
                     <p><!-- I've been in the same fantasy football league for five years now. Every year the issue comes up where we need to assign divisions and make a schedule. Two years ago I made it by hand on an Excel spreadsheet. It proved difficult, as restrictions on the number of divisional matchups and home and away games limit the possible games after others have been assigned. The time to make a new schedule arrived this year, and I'm pretty sure my commisioner just used the same schedule I made two years ago. <br> -->
                         <!-- Now, armed with my newfound Python knowledge, I set out to automate the task of generating a schedule. After all, a computer can check every possible schedule much faster than I can. Two days later I had created a working program, two days after the season started unfortunately. I underestimated the time it would take to make it and although I could have made one new schedule by hand in less time, now I can make one hundred new schedules in less time than I could make one by hand. Such is the power of computers. <br>
                             I have my own opinions on whether leagues should have divisions, whether teams should play other teams in their division twice, whether home games should count, etc. Essentially, I feel that fantasy football should as accurately reflect the format of the actual NFL, as the name fantasy football implies. If the goal was just to see who has the best team, we would see who scored the most points all season. The goal is to see who has the best team when it counts, just like the NFL. <br> -->
                             In the program, I prompt the user for basic input on the structure of their league: number of teams, number of divisions, and number of playoff teams. Then, I create a dictionary to hold the entire schedule and randomize the divisions. Also, I make a list of every possible game to use a reference when assigning games later to make sure it hasn't been assigned already. As I assign games, I create new lists of possible remaining games which is limited by home/away game counts and divisional game requirements. The assignment uses recursion, assigning game after game until either the schedule is complete or no games are possible to be assigned. <br>
                             I'm currently working on saving the schedules as they are made so that the program doesn't make the same schedule twice. Check out the <a href="https://github.com/SCollinA/ff-schedule-maker">source code</a> on my GitHub. A sample schedule is below.
-                        </p>
-                        <img src="images/Sample824.png" alt="one possible schedule for 8 teams in 2 divisions where 4 teams make the playoffs">
+                    </p>
+                    <img src="images/Sample824.png" alt="one possible schedule for 8 teams in 2 divisions where 4 teams make the playoffs">
+                    <a href="http://ffscheduler.collinargo.com">Live Demo!</a>
+                </div>
+            </div>
+            <div class="sticky project">
+                <h3 id="project2" class="project-title button">Task Magic</h3>
+                <div class="project-content button">
+                    <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                    <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+                    <a href="http://taskmagic.collinargo.com">Live Demo!</a>
+                </div>
+            </div>
+            <div class="sticky project">
+                <h3 id="project3"class="project-title button">This Website</h3>
+                <div class="project-content button">
+                    <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                    <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+                    <a href="http://collinargo.com">Live Demo!</a>
+                </div>
+            </div>
+            <div class="sticky project">
+                <h3 id="project4" class="project-title button">My Space App</h3>
+                <div class="project-content button">
+                    <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                    <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+                    <a href="http://myspaceapp.collinargo.com">Live Demo!</a>
+                </div>
+            </div>
+            <div class="sticky project">
+                    <h3 id="project5" class="project-title button">FitFoodTracker</h3>
+                    <div class="project-content button">
+                        <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
+                        <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
+                        <a href="http://fitfoodtracker.collinargo.com">Live Demo!</a>
                     </div>
-            </div>
-            <div class="sticky project">
-                <a name="project2">
-                    <h3 class="project-title button">Task Magic</h3>
-                </a>
-                <div class="button">
-                    <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
-                    <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
                 </div>
-            </div>
-            <div class="sticky project">
-                <a name="project3">
-                    <h3 class="project-title button">This Website</h3>
-                </a>
-                <div class="button">
-                    <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
-                    <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
-                </div>
-            </div>
-            <div class="sticky project">
-                <a name="project4">
-                    <h3 class="project-title button">Space Explorer</h3>
-                </a>
-                <div class="button">
-                    <p>Here's a bunch of text about how hard it was to make the app and how I overcame struggles.</p>
-                    <img src="images/app_demo_2.PNG" alt="a sample task magic screenshot">
-                </div>
-            </div>
         </section>
-    </section>
+    </div>
     <img id="left-arrow" src='images/left-arrow.png'/>
     <img id="right-arrow" src='images/right-arrow.png'/>
     <!-- footer -->
