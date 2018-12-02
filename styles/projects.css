@@ -1,58 +1,19 @@
-.hero-image {
-    /* background-image: url("../images/the_universe.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 150%; */
-    /* background-position: center; */
-    display: flex;
-    height: 600px; 
+.projects-wrapper {
+    height: 100%;
 }
-
-.hero-text {
-    font-size: 6rem;
-    color: #ffffff;
-    margin: auto;
-    text-align: center;
-    vertical-align: center;
-    top: 60px;
-}
-
-
-.previews {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-around;
-}
-
-.preview {
-    margin: 10px 0;
-    width: 40%;
-}
-
-.preview h4 {
-    font-size: 1.5rem;
-    text-align: center;
-    word-wrap: normal;
-    /* padding: auto; */
-    margin: 0;
-    border-bottom: solid 1px #9999ff;
-}
-
-.preview img {
-    display: block;
-    width: 80%;
-    margin: 5% auto;
-}
-
-.content {
-    display: inline;
+.projects {
     font-size: 3rem;
+    height: 100%;
 }
 
-/* .project {
-    background-color: rgba(255, 255, 255, 0.5);
-} */
+.project {
+    height: 100%;
+}
+
+.project-content {
+    overflow: scroll;
+    height: 65%;
+}
 
 .project-title {
     white-space: normal;
@@ -76,6 +37,12 @@
     min-height: 140px;
     height: 20%;
     border-radius: 50%;
+    position: sticky;
+    right: 0;
+    top: 0;
+    padding-left: 0;
+    margin-left: 0;
+    opacity: .9;
 }
 
 section > .button {
