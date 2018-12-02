@@ -8,18 +8,20 @@
 <a class="button" href="blog.html">Blogs</a>
 </nav> */
 const theBody = document.querySelector('body');
+const theURL = window.URL
 
 linkURLs = [
-    ['Fantasy Football Scheduler', 'index.html#project1'], 
-    ['Task Magic', 'index.html#project2'], 
-    ['This Website', 'index.html#project3'], 
+    ['Fantasy Football Scheduler', 'http://ffscheduler.collinargo.com'], 
+    ['Task Magic', 'http://taskmagic.collinargo.com'], 
+    ['This Website', 'http://collinargo.com'], 
     // ['Space Explorer', 'index.html#project4'], 
     ['Pictures', 'pictures.html'], 
     // ['Fortune Cookie', 'fortune.html'], 
     // ['Blogs', 'blog.html'],
     // ['API Practice', 'api_practice.html'],
     // ['Test', 'test.html'],
-    ['My Space App', 'http://my-space-app.collinargo.com']
+    ['My Space App', 'http://myspaceapp.collinargo.com'],
+    ['FitFoodTracker', 'http://fitfoodtracker.collinargo.com']
 ];
 function createNavBar() {
     const tempNavBar = document.createElement('nav');
