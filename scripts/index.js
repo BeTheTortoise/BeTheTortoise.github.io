@@ -13,12 +13,12 @@ linkURLs = [
     ['Fantasy Football Scheduler', 'index.html#project1'], 
     ['Task Magic', 'index.html#project2'], 
     ['This Website', 'index.html#project3'], 
-    ['Space Explorer', 'index.html#project4'], 
+    // ['Space Explorer', 'index.html#project4'], 
     ['Pictures', 'pictures.html'], 
-    ['Fortune Cookie', 'fortune.html'], 
-    ['Blogs', 'blog.html'],
-    ['API Practice', 'api_practice.html'],
-    ['Test', 'test.html'],
+    // ['Fortune Cookie', 'fortune.html'], 
+    // ['Blogs', 'blog.html'],
+    // ['API Practice', 'api_practice.html'],
+    // ['Test', 'test.html'],
     ['My Space App', 'http://my-space-app.collinargo.com']
 ];
 function createNavBar() {
