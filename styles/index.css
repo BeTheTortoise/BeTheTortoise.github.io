@@ -91,9 +91,34 @@ a {
     top: 60px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
+    .hero-text {
+        margin-right: 15%;
+        transition: margin-right linear 1s;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .hero-text {
+        margin-right: 5%;
+        transition: margin-right linear 1s;
+    }
+}
+@media screen and (max-width: 800px) {
     .hero-text {
         margin-right: 0;
+        transition: margin-right linear 1s;
+    }
+}
+@media screen and (max-width: 600px) {
+    .hero-text {
+        margin-right: -5%;
+        transition: margin-right linear 1s;
+    }
+}
+@media screen and (max-width: 400px) {
+    .hero-text {
+        margin-right: -15%;
+        transition: margin-right linear 1s;
     }
 }
 
