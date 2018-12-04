@@ -8,6 +8,7 @@ html, body {
     /* background-color: #000000; */
     background-image: url('../images/the_universe.jpg');
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 /* .hero-image {
@@ -78,15 +79,15 @@ a {
     background-size: 150%; */
     /* background-position: center; */
     display: flex;
-    height: 600px; 
+    height: 100%; 
 }
 
 .hero-text {
     font-size: 6rem;
     color: #ffffff;
     margin: auto;
-    text-align: center;
-    vertical-align: center;
+    /* text-align: center;
+    vertical-align: center; */
     top: 60px;
 }
 
@@ -168,4 +169,57 @@ a:active {
     width: 11%;
     height: 11%;
     z-index: 1000;
+}
+
+/* .projects-wrapper {
+    height: 100%;
+} */
+
+.projects {
+    font-size: 3rem;
+    /* height: 100%; */
+}
+
+.project {
+    height: 400px;
+}
+
+.project-content {
+    overflow: scroll;
+    height: 50%;
+}
+
+.project-title {
+    white-space: normal;
+    margin-left: 10%;
+}
+
+.project img {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.project p {
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 0 10%;
+    white-space: normal;
+}
+
+.profile-image {
+    width: 140px;
+    min-height: 140px;
+    height: 20%;
+    border-radius: 50%;
+    position: sticky;
+    right: 0;
+    top: 0;
+    padding-left: 0;
+    margin-left: 0;
+    /* opacity: .9; */
+}
+
+section > .button {
+    border-color: #99ff99;
 }
