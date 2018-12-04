@@ -86,8 +86,8 @@ a {
     font-size: 6rem;
     color: #ffffff;
     margin: auto;
-    /* text-align: center;
-    vertical-align: center; */
+    text-align: center;
+    /* vertical-align: center; */
     top: 60px;
 }
 
@@ -171,22 +171,21 @@ a:active {
     z-index: 1000;
 }
 
-/* .projects-wrapper {
-    height: 100%;
-} */
+.projects-wrapper {
+    height: 500%;
+}
 
 .projects {
     font-size: 3rem;
-    /* height: 100%; */
+    height: 100%;
 }
 
 .project {
-    height: 400px;
+    height: 20%;
 }
 
 .project-content {
     overflow: scroll;
-    height: 50%;
 }
 
 .project-title {

@@ -52,10 +52,10 @@ rightArrow.onclick = scrollNavBarClick
 function scrollNavBarClick(e) {
     if (e.target.id == 'left-arrow') {
         // myNavBar.scrollTo((myNavBar.scrollLeft + 200), 0)
-        myNavBar.scrollTo({left: myNavBar.scrollLeft + 800, behavior: 'smooth'})
+        myNavBar.scrollTo({left: myNavBar.scrollLeft - 800, behavior: 'smooth'})
     } else {
         // myNavBar.scrollTo((), 0)
-        myNavBar.scrollTo({left: myNavBar.scrollLeft - 800, behavior: 'smooth'})
+        myNavBar.scrollTo({left: myNavBar.scrollLeft + 800, behavior: 'smooth'})
     }
 }
 
