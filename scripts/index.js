@@ -60,7 +60,7 @@ function scrollNavBarClick(e) {
 }
 
 function setNavTop() {
-    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight - 5) + 'px');
+    myNavBar.style.top = String((innerHeight - myNavBar.scrollHeight) + 'px');
 }
 
 function scrollNavBar() {

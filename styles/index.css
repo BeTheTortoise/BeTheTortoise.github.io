@@ -144,12 +144,12 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
 }
 
 .nav-bar a {
     white-space: nowrap;
     /* margin: 2% 15%; */
+    /* overflow: hidden; */
 }
 
 /* .nav-bar .button:hover {
@@ -183,20 +183,22 @@ a:active {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 11%;
-    height: 11%;
+    width: 18%;
+    max-width: 200px;
+    height: 10%;
     z-index: 1000;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
 }
 
 #right-arrow {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 11%;
-    height: 11%;
+    width: 18%;
+    max-width: 200px;
+    height: 10%;
     z-index: 1000;
-    padding-bottom: 2%;
+    padding-bottom: 1%;
 }
 
 .projects-wrapper {
