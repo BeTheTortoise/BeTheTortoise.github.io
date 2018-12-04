@@ -144,6 +144,7 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
 }
 
 .nav-bar a {
@@ -185,6 +186,7 @@ a:active {
     width: 11%;
     height: 11%;
     z-index: 1000;
+    padding-bottom: 2%;
 }
 
 #right-arrow {
@@ -194,6 +196,7 @@ a:active {
     width: 11%;
     height: 11%;
     z-index: 1000;
+    padding-bottom: 2%;
 }
 
 .projects-wrapper {
