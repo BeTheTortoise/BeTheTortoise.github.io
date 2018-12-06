@@ -227,14 +227,14 @@ a:active {
 }
 
 .project img {
-    width: 80%;
+    width: 50%;
     display: block;
     margin: auto;
 }
 
 .project p {
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 3rem;
     padding: 0 10%;
     white-space: normal;
 }
