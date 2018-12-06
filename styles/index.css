@@ -207,7 +207,8 @@ a:active {
 
 .projects {
     font-size: 3rem;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project {
