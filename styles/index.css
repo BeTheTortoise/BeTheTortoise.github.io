@@ -211,13 +211,14 @@ a:active {
 }
 
 .project {
-    height: 20%;
+    height: 18%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 6%;
 }
 
 .project-content {
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .project-title {
