@@ -1,3 +1,7 @@
+body {
+    overflow-y: scroll;
+}
+
 .imagesGrid {
     display: flex;
     flex-flow: column;
