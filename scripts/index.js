@@ -23,7 +23,8 @@ linkURLs = [
     // ['API Practice', 'api_practice.html'],
     // ['Test', 'test.html'],
     ['My Space App', '#project4'],
-    ['FitFoodTracker', '#project5']
+    ['FitFoodTracker', '#project5'],
+    ['Scorecard', '#project6']
 ];
 function createNavBar() {
     const tempNavBar = document.createElement('nav');
