@@ -25,6 +25,7 @@ linkURLs = [
     ['My Space App', '#project4'],
     ['FitFoodTracker', '#project5'],
     ['Scorecard', '#project6']
+    ['Tee Times', '#project7']
 ];
 function createNavBar() {
     const tempNavBar = document.createElement('nav');
