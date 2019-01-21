@@ -16,7 +16,7 @@ linkURLs = [
     ['Fantasy Football Scheduler', '#project1'],
     ['Task Magic', '#project2'],
     ['This Website', '#project3'],
-    ['Pictures', 'pictures.html'],
+    // ['Pictures', 'pictures.html'],
     ['My Space App', '#project4'],
     ['Scorecard', '#project6'],
     ['Tee Times', '#project7']
