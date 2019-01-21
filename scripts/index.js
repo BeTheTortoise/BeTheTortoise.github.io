@@ -13,23 +13,17 @@ const leftArrow = document.getElementById('left-arrow')
 const rightArrow = document.getElementById('right-arrow')
 
 linkURLs = [
-    ['Fantasy Football Scheduler', '#project1'], 
-    ['Task Magic', '#project2'], 
-    ['This Website', '#project3'], 
-    // ['Space Explorer', 'index.html#project4'], 
-    ['Pictures', 'pictures.html'], 
-    // ['Fortune Cookie', 'fortune.html'], 
-    // ['Blogs', 'blog.html'],
-    // ['API Practice', 'api_practice.html'],
-    // ['Test', 'test.html'],
+    ['Fantasy Football Scheduler', '#project1'],
+    ['Task Magic', '#project2'],
+    ['This Website', '#project3'],
+    ['Pictures', 'pictures.html'],
     ['My Space App', '#project4'],
-    ['FitFoodTracker', '#project5'],
     ['Scorecard', '#project6'],
     ['Tee Times', '#project7']
 ];
 function createNavBar() {
-    const tempNavBar = document.createElement('nav');
-    tempNavBar.classList.add('nav-bar');
+    const tempNavBar = document.getElementById('nav-bar');
+    // tempNavBar.classList.add('nav-bar');
     // tempNavBar.classList.add('disappearing');
     createNavLinks(tempNavBar);
     createNavLinks(tempNavBar);
@@ -46,7 +40,7 @@ function createNavLinks(navBar) {
     });
 }
 const myNavBar = createNavBar();
-theBody.appendChild(myNavBar);
+// theBody.appendChild(myNavBar);
 
 leftArrow.onclick = scrollNavBarClick
 rightArrow.onclick = scrollNavBarClick
